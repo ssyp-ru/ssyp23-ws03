@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cruyf4v3bx0ks"]
+
+[ext_resource type="PackedScene" uid="uid://cx8cdt5l02dwc" path="res://entities/Predator/Predator.tscn" id="1_wvom5"]
+[ext_resource type="Script" path="res://entities/Lion/Lion.gd" id="2_1q3ki"]
+[ext_resource type="Texture2D" uid="uid://1qu4tv803jw0" path="res://ASSETS/lions.png" id="3_dv5q8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3dmn"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(740, 297, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4we4u"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(650, 297, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxcnv"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(560, 297, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kjd4"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(554, 32, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g04uk"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(644, 32, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaw3i"]
+atlas = ExtResource("3_dv5q8")
+region = Rect2(734, 32, 90, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4kx0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3dmn")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4we4u")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_jxcnv")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4we4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3dmn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kjd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g04uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaw3i")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Lion" instance=ExtResource("1_wvom5")]
+script = ExtResource("2_1q3ki")
+
+[node name="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_v4kx0")
+animation = &"idle"
+frame_progress = 0.944018

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b83qgfgrsh6e3"]
+
+[ext_resource type="PackedScene" uid="uid://denggocd1jhmw" path="res://entities/plant/Plant.tscn" id="1_ccmag"]
+[ext_resource type="Script" path="res://entities/Grass/Grass.gd" id="2_siuoh"]
+[ext_resource type="Texture2D" uid="uid://dwshdeodh6t2k" path="res://Res/Grass.png" id="3_b1vyv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jyl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b1vyv")
+}],
+"loop": true,
+"name": &"Grass",
+"speed": 5.0
+}]
+
+[node name="Grass" instance=ExtResource("1_ccmag")]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("2_siuoh")
+
+[node name="ColorRect" parent="CollisionShape2D" index="0"]
+visible = false
+color = Color(0, 0.560784, 0.286275, 1)
+
+[node name="Label" parent="." index="3"]
+visible = true
+
+[node name="Label2" parent="." index="4"]
+visible = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="6"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5jyl8")
+animation = &"Grass"

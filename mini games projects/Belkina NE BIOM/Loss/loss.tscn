@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv88g1gqx6lab"]
+
+[ext_resource type="Script" path="res://Loss/Loss.gd" id="1_o4jiw"]
+[ext_resource type="Texture2D" uid="uid://c2ljs4plqw5wc" path="res://Sunny Cloud Background/Sunny Cloud Background.png" id="2_i5tfl"]
+[ext_resource type="AudioStream" uid="uid://cbxy7wttyqskv" path="res://Music/2f535bb294ca3a9.mp3" id="3_cn05a"]
+
+[node name="Loss" type="Node2D"]
+script = ExtResource("1_o4jiw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 167.0
+offset_top = 290.0
+offset_right = 498.0
+offset_bottom = 378.0
+text = "пройти заново"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 153.0
+offset_top = 188.0
+offset_right = 540.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Вы прoиграли, хотите пройти уровень заново?"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 212.0
+offset_top = 423.0
+offset_right = 465.0
+offset_bottom = 504.0
+text = "вернуться на первый уровень"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="SunnyCloudBackground" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(335.5, 295.5)
+scale = Vector2(0.348438, 0.54537)
+texture = ExtResource("2_i5tfl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cn05a")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

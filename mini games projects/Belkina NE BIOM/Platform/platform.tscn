@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://css1y2b77ksi1"]
+
+[ext_resource type="Script" path="res://Platform/platform.gd" id="1_e4ix4"]
+[ext_resource type="Texture2D" uid="uid://bewqj4rb78vtx" path="res://props/big-crate.png" id="2_45fqm"]
+
+[sub_resource type="Curve2D" id="Curve2D_g71qd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -274, -138, 0, 0, 0, 0, -271, -378, 0, 0, 0, 0, -570, -449, 0, 0, 0, 0, -451, -254, 0, 0, 0, 0, -284, -139)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4bsn"]
+size = Vector2(30, 28)
+
+[node name="Platform" type="Path2D"]
+curve = SubResource("Curve2D_g71qd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-274, -138)
+rotation = -1.68694
+rotates = false
+cubic_interp = false
+script = ExtResource("1_e4ix4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="PathFollow2D"]
+position = Vector2(0.0226707, 0.999743)
+
+[node name="Big-crate" type="Sprite2D" parent="PathFollow2D/CharacterBody2D"]
+position = Vector2(-37.6508, -6.39647)
+rotation = 1.68694
+texture = ExtResource("2_45fqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/CharacterBody2D"]
+position = Vector2(-38.6441, -6.51236)
+rotation = 1.68694
+shape = SubResource("RectangleShape2D_p4bsn")

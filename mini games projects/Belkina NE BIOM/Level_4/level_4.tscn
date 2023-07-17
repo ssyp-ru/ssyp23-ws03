@@ -1,0 +1,134 @@
+[gd_scene load_steps=21 format=3 uid="uid://d0i50xo21fd5o"]
+
+[ext_resource type="Texture2D" uid="uid://s6u12sogvx5e" path="res://BG_DesertMountains/background1.png" id="1_f8gqb"]
+[ext_resource type="Script" path="res://Level_4/level_4.gd" id="1_sibrl"]
+[ext_resource type="Texture2D" uid="uid://xphntsa70vd4" path="res://BG_DesertMountains/background2.png" id="2_ugriq"]
+[ext_resource type="Texture2D" uid="uid://obid441uyr0p" path="res://BG_DesertMountains/background3.png" id="3_rko0u"]
+[ext_resource type="Texture2D" uid="uid://diclms1r3438i" path="res://BG_DesertMountains/cloud1.png" id="4_vnb8o"]
+[ext_resource type="Texture2D" uid="uid://ckxdo38xg4ja4" path="res://BG_DesertMountains/cloud5.png" id="5_dd4y3"]
+[ext_resource type="Texture2D" uid="uid://clxc0n18wa0l3" path="res://BG_DesertMountains/cloud3.png" id="6_17o8y"]
+[ext_resource type="Texture2D" uid="uid://bng0p5pvyi21n" path="res://BG_DesertMountains/cloud6.png" id="7_2lvif"]
+[ext_resource type="Texture2D" uid="uid://cy8bespm565ia" path="res://BG_DesertMountains/cloud8.png" id="8_qp2dq"]
+[ext_resource type="Texture2D" uid="uid://bewqj4rb78vtx" path="res://props/big-crate.png" id="9_r5m6t"]
+[ext_resource type="PackedScene" uid="uid://b1j2i8145uav" path="res://Player/player.tscn" id="10_ulbgx"]
+[ext_resource type="PackedScene" uid="uid://cchd07mstitth" path="res://Lift/lift_platform.tscn" id="11_diqt5"]
+[ext_resource type="PackedScene" uid="uid://dyrewf6vuq4ik" path="res://GEM/gem.tscn" id="12_wnf0n"]
+[ext_resource type="PackedScene" uid="uid://df2hvoosew3ph" path="res://Hud/hud.tscn" id="13_trpn4"]
+[ext_resource type="PackedScene" uid="uid://cc47tnd7gleyh" path="res://Block/block.tscn" id="14_3mlfv"]
+[ext_resource type="AudioStream" uid="uid://nwges21duk2x" path="res://Music/78377a82ea2d096.mp3" id="16_q6eyb"]
+[ext_resource type="PackedScene" uid="uid://cxapav8np5kri" path="res://Exit/exit_3.tscn" id="17_w5nha"]
+[ext_resource type="PackedScene" uid="uid://lp2tyut6o2wj" path="res://Hud/Hud_gem.tscn" id="18_7h4vu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj68v"]
+texture = ExtResource("9_r5m6t")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_4a34q"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_aj68v")
+
+[node name="Level_4" type="Node2D"]
+script = ExtResource("1_sibrl")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Cloud1" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(552, 91.25)
+scale = Vector2(3.30435, 3.16667)
+texture = ExtResource("4_vnb8o")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background1" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(333, 293)
+scale = Vector2(1.05625, 0.923438)
+texture = ExtResource("1_f8gqb")
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(333, 333)
+scale = Vector2(1.05625, 0.796875)
+texture = ExtResource("2_ugriq")
+
+[node name="Background3" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(329, 388)
+scale = Vector2(1.04922, 0.596875)
+texture = ExtResource("3_rko0u")
+
+[node name="Cloud5" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(175, 231.5)
+scale = Vector2(1.4, 1.35714)
+texture = ExtResource("5_dd4y3")
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(297, 137)
+texture = ExtResource("6_17o8y")
+
+[node name="Cloud7" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(442, 189)
+scale = Vector2(2.08, 2.52381)
+texture = ExtResource("5_dd4y3")
+
+[node name="Cloud6" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(618, 180)
+texture = ExtResource("7_2lvif")
+
+[node name="Cloud8" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(120.25, 71.75)
+scale = Vector2(1.74051, 1.59756)
+texture = ExtResource("8_qp2dq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_4a34q")
+format = 2
+layer_0/tile_data = PackedInt32Array(41, 65536, 0, 65577, 65536, 1, 131113, 65536, 0, 196649, 65536, 1, 262185, 65536, 0, 327721, 65536, 1, 393257, 65536, 0, 458793, 65536, 1, 524329, 65536, 0, 589865, 65536, 1, 655401, 65536, 0, 720937, 65536, 1, 786473, 65536, 0, 852009, 65536, 1, 917545, 65536, 0, 983081, 65536, 1, 1048617, 65536, 0, 1114153, 65536, 1, 1179689, 65536, 0, 1245225, 65536, 1, 1310761, 65536, 0, 1376297, 65536, 1, 1441833, 65536, 0, 1507369, 65536, 1, 1572905, 65536, 0, 1638441, 65536, 1, 1703977, 65536, 0, 1769513, 65536, 1, 1835049, 65536, 0, 1900585, 65536, 1, 1966121, 65536, 0, 2031657, 65536, 1, 2097193, 65536, 0, 2162729, 65536, 1, 2228265, 65536, 0, 0, 0, 0, 65536, 0, 1, 131072, 0, 0, 196608, 0, 1, 262144, 0, 0, 327680, 0, 1, 393216, 0, 0, 458752, 0, 1, 524288, 0, 0, 589824, 0, 1, 655360, 0, 0, 720896, 0, 1, 786432, 0, 0, 851968, 0, 1, 917504, 0, 0, 983040, 0, 1, 1048576, 0, 0, 1114112, 0, 1, 1179648, 0, 0, 1245184, 0, 1, 1310720, 0, 0, 1376256, 0, 1, 1441792, 0, 0, 1507328, 0, 1, 1572864, 0, 0, 1638400, 0, 1, 1703936, 0, 0, 1769472, 0, 1, 1835008, 0, 0, 1900544, 0, 1, 1966080, 0, 0, 2031616, 0, 1, 2097152, 0, 0, 2162688, 0, 1, 2228224, 0, 0, 1, 65536, 0, 2, 0, 0, 3, 65536, 0, 4, 0, 0, 5, 65536, 0, 6, 0, 0, 7, 65536, 0, 8, 0, 0, 9, 65536, 0, 10, 0, 0, 11, 65536, 0, 12, 0, 0, 13, 65536, 0, 14, 0, 0, 15, 65536, 0, 16, 0, 0, 17, 65536, 0, 18, 0, 0, 19, 65536, 0, 20, 0, 0, 21, 65536, 0, 22, 0, 0, 23, 65536, 0, 24, 0, 0, 25, 65536, 0, 26, 0, 0, 27, 65536, 0, 28, 0, 0, 29, 65536, 0, 30, 0, 0, 31, 65536, 0, 32, 0, 0, 33, 65536, 0, 34, 0, 0, 35, 65536, 0, 36, 0, 0, 37, 65536, 0, 38, 0, 0, 39, 65536, 0, 40, 0, 0, 2293801, 65536, 0, 2359337, 65536, 1, 2293760, 0, 0, 2359296, 0, 1, 2359297, 65536, 1, 2359298, 0, 1, 2359299, 65536, 1, 2359300, 0, 1, 2359301, 65536, 1, 2359302, 0, 1, 2359303, 65536, 1, 2359304, 0, 1, 2359305, 65536, 1, 2359306, 0, 1, 2359307, 65536, 1, 2359308, 0, 1, 2359309, 65536, 1, 2359310, 0, 1, 2359311, 65536, 1, 2359312, 0, 1, 2359313, 65536, 1, 2359314, 0, 1, 2359315, 65536, 1, 2359316, 0, 1, 2359317, 65536, 1, 2359318, 0, 1, 2359319, 65536, 1, 2359320, 0, 1, 2359321, 65536, 1, 2359322, 0, 1, 2359323, 65536, 1, 2359324, 0, 1, 2359325, 65536, 1, 2359326, 0, 1, 2359327, 65536, 1, 2359328, 0, 1, 2359329, 65536, 1, 2359330, 0, 1, 2359331, 65536, 1, 2359332, 0, 1, 2359333, 65536, 1, 2359334, 0, 1, 2359335, 65536, 1, 2359336, 0, 1, 2228234, 0, 0, 2293770, 0, 1, 2228235, 65536, 0, 2293771, 65536, 1, 655393, 0, 0, 720929, 0, 1, 655394, 65536, 0, 720930, 65536, 1, 327719, 0, 1, 327720, 65536, 1, 327717, 0, 1, 327718, 65536, 1, 327715, 0, 1, 327716, 65536, 1, 327708, 0, 0, 393244, 0, 1, 327709, 65536, 0, 393245, 65536, 1, 1114117, 0, 0, 1179653, 0, 1, 1114118, 65536, 0, 1179654, 65536, 1, 327700, 0, 0, 393236, 0, 1, 327701, 65536, 0, 393237, 65536, 1)
+
+[node name="player" parent="." instance=ExtResource("10_ulbgx")]
+position = Vector2(227, 536)
+
+[node name="Gem" parent="." instance=ExtResource("12_wnf0n")]
+position = Vector2(468, 63)
+
+[node name="Gem2" parent="." instance=ExtResource("12_wnf0n")]
+position = Vector2(541, 135)
+
+[node name="Lift" parent="." instance=ExtResource("11_diqt5")]
+position = Vector2(521, 1625)
+
+[node name="HUD" parent="." instance=ExtResource("13_trpn4")]
+position = Vector2(36, 58)
+
+[node name="Block" parent="." instance=ExtResource("14_3mlfv")]
+position = Vector2(251, 135)
+
+[node name="Block2" parent="." instance=ExtResource("14_3mlfv")]
+position = Vector2(94, 137)
+
+[node name="Gem4" parent="." instance=ExtResource("12_wnf0n")]
+position = Vector2(98, 233)
+
+[node name="Gem5" parent="." instance=ExtResource("12_wnf0n")]
+position = Vector2(93, 92)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_q6eyb")
+
+[node name="exit_3" parent="." instance=ExtResource("17_w5nha")]
+position = Vector2(644, 65)
+
+[node name="Hud_gem" parent="." instance=ExtResource("18_7h4vu")]
+position = Vector2(638, 111)

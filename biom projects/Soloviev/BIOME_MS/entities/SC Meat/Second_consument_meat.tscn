@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo226kxrhhh4m"]
+
+[ext_resource type="PackedScene" uid="uid://cml0sduhmouq7" path="res://entities/meat/Meat.tscn" id="1_31n7f"]
+[ext_resource type="Script" path="res://entities/SC Meat/Second_consument_meat.gd" id="2_3xigg"]
+
+[node name="SecondConsumentMeat" groups=["second_consument_meat"] instance=ExtResource("1_31n7f")]
+script = ExtResource("2_3xigg")
+
+[node name="Name" parent="." index="4"]
+offset_left = -98.0
+offset_top = -64.0
+offset_right = 99.0
+offset_bottom = -38.0
+text = "Second_consument_meat"

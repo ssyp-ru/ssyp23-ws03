@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2ovfoqcyvh2w"
+path="res://.godot/imported/tiny-rpg-town.ogg-b26a2f8c653dcdf87015ba4a3538a299.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/tiny-rpg-town.ogg"
+dest_files=["res://.godot/imported/tiny-rpg-town.ogg-b26a2f8c653dcdf87015ba4a3538a299.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://sb5gfatqjidq"]
+
+[ext_resource type="Script" path="res://entities/animal/Animal.gd" id="2_q1u3x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w5ugd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqxby"]
+albedo_color = Color(0.701961, 0, 0.109804, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_litcm"]
+
+[node name="Animal" type="CharacterBody3D" groups=["meat_eater"]]
+motion_mode = 1
+script = ExtResource("2_q1u3x")
+speed = 115.0
+max_hp = 150.0
+hp = 150.0
+hunger_speed = 0.08
+
+[node name="Name" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -83.0
+offset_right = 57.0
+offset_bottom = -57.0
+text = ". . ."
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_w5ugd")
+
+[node name="HungerBar" type="ProgressBar" parent="."]
+modulate = Color(0.827451, 0, 0.0117647, 1)
+offset_left = -38.0
+offset_top = -45.0
+offset_right = 218.0
+offset_bottom = -18.0
+scale = Vector2(0.3, 0.3)
+value = 20.0
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+offset_left = -38.0
+offset_top = -57.0
+offset_right = 218.0
+offset_bottom = -30.0
+scale = Vector2(0.3, 0.3)
+value = 20.0
+show_percentage = false
+
+[node name="Age" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -38.0
+offset_right = 170.0
+offset_bottom = 17.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="ColorRect" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qqxby")
+mesh = SubResource("SphereMesh_litcm")

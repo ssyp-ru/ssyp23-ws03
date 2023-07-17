@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7n2ws333887t"]
+
+[ext_resource type="PackedScene" uid="uid://bh0fs8h5ou72s" path="res://entities/thing/Thing.tscn" id="1_077qi"]
+[ext_resource type="Script" path="res://entities/food/Food.gd" id="2_kyk6r"]
+[ext_resource type="Texture2D" uid="uid://boqildl5ygcmg" path="res://meat.png" id="3_sr37r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1tl"]
+size = Vector2(20, 14)
+
+[node name="Food" groups=["food"] instance=ExtResource("1_077qi")]
+z_index = -1
+script = ExtResource("2_kyk6r")
+
+[node name="Name" parent="." index="0"]
+offset_top = -59.0
+offset_bottom = -33.0
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3u1tl")
+disabled = true
+
+[node name="HealthBar" parent="." index="3"]
+offset_top = -29.0
+offset_bottom = -2.0
+
+[node name="Age" parent="." index="4"]
+offset_top = -35.0
+offset_bottom = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
+position = Vector2(2, -5)
+scale = Vector2(0.0827004, 0.0827004)
+texture = ExtResource("3_sr37r")

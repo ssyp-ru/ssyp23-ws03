@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlt6ijt36063s"]
+
+[ext_resource type="Script" path="res://лобби.gd" id="1_o5k7y"]
+[ext_resource type="PackedScene" uid="uid://bxjrtxu1fpkx7" path="res://игрок/player.tscn" id="2_yxgm7"]
+[ext_resource type="Texture2D" uid="uid://cg7xkkqsxfyss" path="res://игрок/list@2x.jpg" id="3_tf8yp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o5k7y")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 156.0
+offset_top = 196.0
+offset_right = 356.0
+offset_bottom = 307.0
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 75
+text = "Play"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 113.0
+offset_top = 368.0
+offset_right = 374.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 75
+text = "Setting"
+
+[node name="Player" parent="." instance=ExtResource("2_yxgm7")]
+position = Vector2(757, 343)
+scale = Vector2(20, 20)
+
+[node name="List2x" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(525, 75)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_tf8yp")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.4, 0.537255, 0.192157, 1)
+offset_left = 45.0
+offset_top = 201.0
+offset_right = 85.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0.4, 0.537255, 0.192157, 1)
+offset_left = 226.0
+offset_top = 53.0
+offset_right = 266.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(0.4, 0.537255, 0.192157, 1)
+offset_left = 498.0
+offset_top = 137.0
+offset_right = 538.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label4" type="Label" parent="."]
+modulate = Color(0.4, 0.537255, 0.192157, 1)
+offset_left = 486.0
+offset_top = 53.0
+offset_right = 526.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="ready" from="Label" to="." method="_on_label_ready"]
+[connection signal="ready" from="Label2" to="." method="_on_label_2_ready"]
+[connection signal="ready" from="Label3" to="." method="_on_label_3_ready"]
+[connection signal="ready" from="Label4" to="." method="_on_label_4_ready"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://pcwtu1ylo21v"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2"]
+[ext_resource type="AudioStream" uid="uid://b2nw1lvuocqih" path="res://Starset - My Demons (minus).mp3" id="3_jjrgc"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 27.0
+offset_bottom = 18.0
+
+[node name="Position2D1" type="Marker2D" parent="."]
+
+[node name="Position2D2" type="Marker2D" parent="."]
+position = Vector2(493.889, 0)
+
+[node name="Position2D3" type="Marker2D" parent="."]
+position = Vector2(1020.54, 3.77975)
+
+[node name="Position2D4" type="Marker2D" parent="."]
+position = Vector2(2.51984, 600.982)
+
+[node name="Position2D5" type="Marker2D" parent="."]
+position = Vector2(496.409, 600.982)
+
+[node name="Position2D6" type="Marker2D" parent="."]
+position = Vector2(1023.06, 604.762)
+
+[node name="Position2D7" type="Marker2D" parent="."]
+position = Vector2(-2.5199, 288.522)
+
+[node name="Position2D8" type="Marker2D" parent="."]
+position = Vector2(1028.1, 292.302)
+
+[node name="time" type="Timer" parent="."]
+autostart = true
+
+[node name="pl1" parent="." instance=ExtResource("2")]
+position = Vector2(521.341, 284.235)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jjrgc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 718.0
+offset_top = 11.0
+offset_right = 837.0
+offset_bottom = 37.0
+text = "Нажми кнопку"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="time" to="." method="_on_time_timeout"]

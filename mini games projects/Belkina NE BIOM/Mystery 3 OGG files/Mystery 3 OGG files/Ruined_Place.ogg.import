@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c83mkad1qafh2"
+path="res://.godot/imported/Ruined_Place.ogg-1c10b95edb6fa2743563d214f8ec54bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/Ruined_Place.ogg"
+dest_files=["res://.godot/imported/Ruined_Place.ogg-1c10b95edb6fa2743563d214f8ec54bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

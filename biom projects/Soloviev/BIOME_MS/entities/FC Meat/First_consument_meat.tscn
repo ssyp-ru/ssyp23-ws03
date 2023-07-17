@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkswsgqdvfioi"]
+
+[ext_resource type="PackedScene" uid="uid://cml0sduhmouq7" path="res://entities/meat/Meat.tscn" id="1_1mq24"]
+[ext_resource type="Script" path="res://entities/FC Meat/First_consument_meat.gd" id="2_kjocy"]
+
+[node name="FirstConsumentMeat" groups=["SC_food", "first_consument_meat"] instance=ExtResource("1_1mq24")]
+script = ExtResource("2_kjocy")

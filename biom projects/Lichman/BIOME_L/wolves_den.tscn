@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ntt8xrt0fuhl"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 449.0
+offset_bottom = 469.0
+color = Color(1, 1, 1, 0)
+
+[node name="WolvesDen" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 405.0
+offset_right = 439.0
+offset_bottom = 456.0
+color = Color(0.427451, 0.564706, 0.764706, 1)

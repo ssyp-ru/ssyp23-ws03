@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://cctb1pm07u1tl"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_o16yn"]
+
+[node name="Node2D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_o16yn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="l" type="CanvasLayer" parent="."]
+
+[node name="Predators" type="LineEdit" parent="l"]
+offset_left = 584.0
+offset_top = 160.0
+offset_right = 830.0
+offset_bottom = 211.0
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="GrassEaters" type="LineEdit" parent="l"]
+offset_left = 584.0
+offset_top = 227.0
+offset_right = 830.0
+offset_bottom = 278.0
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Plants" type="LineEdit" parent="l"]
+offset_left = 585.0
+offset_top = 294.0
+offset_right = 831.0
+offset_bottom = 345.0
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Food" type="LineEdit" parent="l"]
+offset_left = 585.0
+offset_top = 362.0
+offset_right = 831.0
+offset_bottom = 413.0
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="PredatorsLabel" type="Label" parent="l"]
+offset_left = 240.0
+offset_top = 157.0
+offset_right = 576.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(0.827451, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Predators:"
+horizontal_alignment = 2
+
+[node name="GrassEatersLabel" type="Label" parent="l"]
+offset_left = 239.0
+offset_top = 226.0
+offset_right = 575.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0, 0.407843, 0.890196, 1)
+theme_override_font_sizes/font_size = 35
+text = "Grass Eaters:"
+horizontal_alignment = 2
+
+[node name="PlantsLabel" type="Label" parent="l"]
+offset_left = 239.0
+offset_top = 291.0
+offset_right = 575.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.6, 0.768627, 0.266667, 1)
+theme_override_font_sizes/font_size = 40
+text = "Plants:"
+horizontal_alignment = 2
+
+[node name="FoodLabel" type="Label" parent="l"]
+offset_left = 239.0
+offset_top = 356.0
+offset_right = 575.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(0.8, 0.643137, 0.105882, 1)
+theme_override_font_sizes/font_size = 40
+text = "Food:"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="l"]
+offset_left = 399.0
+offset_top = 474.0
+offset_right = 774.0
+offset_bottom = 548.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[connection signal="pressed" from="l/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs7h4no4quim"]
+
+[ext_resource type="PackedScene" uid="uid://cq80an5lofhno" path="res://entities/organism/Organism.tscn" id="1_8lca8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kttr"]
+size = Vector2(26, 26)
+
+[sub_resource type="LabelSettings" id="LabelSettings_npdvq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftwyb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Animal" groups=["animals"] instance=ExtResource("1_8lca8")]
+collision_mask = 2
+max_childbearing_age = 18
+max_age = 25.0
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_4kttr")
+
+[node name="Age" parent="." index="4"]
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 39.0
+offset_bottom = 39.0
+
+[node name="Name" parent="." index="5"]
+offset_top = -39.0
+offset_bottom = 13.0
+label_settings = SubResource("LabelSettings_npdvq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_ftwyb")
+animation = &"run"

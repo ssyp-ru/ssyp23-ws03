@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbbonh2useo64"
+path="res://.godot/imported/otherworld.ogg-cf5e8d02472b852f948f13784794f929.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/otherworld.ogg"
+dest_files=["res://.godot/imported/otherworld.ogg-cf5e8d02472b852f948f13784794f929.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,12 @@
+res://entities/wolf/wolf.tscn
+res://entities/Goat/goat.tscn
+res://entities/animal/Animal.tscn
+res://entities/plant/Plant.tscn
+res://Main.tscn
+res://Global.tscn
+res://entities/Grass/Grass.tscn
+res://goats_den.tscn
+res://wolves_den.tscn
+res://entities/food/Food.tscn
+res://entities/human/human.tscn
+res://entities/Tree/Tree.tscn

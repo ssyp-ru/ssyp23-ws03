@@ -1,0 +1,302 @@
+
+
+
+
+
+Проблемы:
+	
+	При переходе через starvation_limit обратно в сытую зону животное не наедается досыта, 
+	а наедается лишь до неголодного состояния. Животное должно наедаться досыта, до состояния hunger==0
+	
+	Я хочу, чтобы когда животное хотело есть - онр наедалось досыта, но когда hunger < starvation_limit животное не шло есть
+	
+	животное слишком медленно голодает
+	
+	
+	
+	
+
+
+Планы:	
+	 Сделать животных которые едят plant 
+	
+	 Добавить хищников(Консументов 3 порядка - львов, допустим)
+	 над имеющимися хищниками(Консументами 2 порядка, волков, к примеру), 
+	 которые не могут есть ничего кроме других животных
+	
+	 Сделать так чтобы растения и животные появлялись с самого начала в случайных местах
+	
+	 Сделать текстурки и базовую тайловую карту
+	
+	
+	 Добавить размножение растений и сделать так чтобы травоядные ели plants,
+	 убрать foods как устаревший костыль, сделать вместо них трупы животных.
+	
+	 Добавить хищников и травоядных
+	
+	 Добавить сон и замедление всех жизненных процессов в нем
+	
+	 
+	
+	 Сделать растения которые могут быть съедены консументами второго порядка
+	
+	 Сделать паузу и более сильное ускорение времени
+	
+	 Сделать статистику по животным
+	
+	
+	
+	
+Совсем дальние планы:
+	1) Реализовать тайловую карту с уровнями плодородности почвы. 
+	Чем больше животных и растений погибало на определенном месте, тем там почва плодороднее.
+	Соответственно, чем в определенном месте больше растений, тем она менее плодородная. В зависимости
+	От плодородности почвы на ней могут расти разные растения
+	
+	2) Реализовать пола, беременность, связь двух животных во время него и их поведение
+
+	3) Сделать хищные растения
+	
+	4) Оптимизировать неподвижные объекты.
+
+
+
+
+
+
+
+
+
+
+
+extends "res://entities/organism/Organism.gd"
+var where_to_go - объект который нужно съесть
+var food_location - расположение этого объекта
+var middle_pos - расположение животного между укусами
+var animal = self
+var gave_birth: bool = false
+@export var children : int
+@onready var collider = $CollisionShape2D
+var going = 0
+#var nearest_food_object := CharacterBody2D.new()
+var is_food_found = false
+var movetime - время движения в sstate`ах
+var sub_state
+
+
+func set_random_direction_and_speed():
+	velocity = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)) * speed * Global.speed_up
+	#sleep(randi_range(100, 500))
+
+
+
+func init():
+	movetime = 0.0
+	is_food_found = false
+	starvation_limit = 1
+	set_random_direction_and_speed()
+	gave_birth = 0
+	hp = 100
+	state = STATE_IDLE
+
+func update(delta):
+	
+
+	naming()
+	check_if_dead() 
+
+
+	match state:
+
+		STATE_IDLE:
+			Меняем текст над животным для более простой отладки
+			Включаем мирное поведение (Встроен случай перехода на STATE_LOOK_FOR_FOOD)
+			Включаем голод (Голод не в функции мирного поведения потому что пока что так легче)
+			Включаем старение
+
+		STATE_LOOK_FOR_FOOD: #если животное голодно то искать еду
+			Меняем текст над животным для более простой отладки
+			Включаем голод 
+			Включаем старение
+			if Если еда еще есть на карте:
+				where_to_go = find_nearest_food()
+				print(where_to_go)
+				if where_to_go != null:  #если можно найти ближайшую еду
+					state = STATE_WALK_TO_FOOD #если еда найдена то начать двигаться к ней
+
+
+		STATE_WALK_TO_FOOD: 
+			aging(delta)
+			hungering(delta)
+			$position.text = "STATE_WALK_TO_FOOD"
+			move_to_food(where_to_go, delta)
+			if appetite:
+				state = STATE_EATING
+		
+		STATE_EATING:
+			$position.text = "STATE_EATING"
+			bite()
+		
+
+
+
+func munchkin_behavior(delta):
+	#set_random_direction_and_speed()
+	match sub_state:
+		
+		
+		SSTATE_WALK: 
+			movetime -= delta
+			if movetime < 0.0:
+				movetime = randf_range(0.5, 1.5)
+				set_random_direction_and_speed()
+			if randf() < 0.01:
+				sub_state = SSTATE_STAY
+				
+				
+		SSTATE_STAY, _:
+			velocity = Vector2()
+			if randf() < 0.01:
+				sub_state = SSTATE_WALK
+			pass
+	
+	
+	if age in childbearing_age: #если животное в нужном возрасте то сделать еще одно
+		give_birth_animal($".",children)
+		gave_birth = 1
+	
+
+
+func move(delta):
+	pass
+#добавить ограничение перемещения, чтобы не убегал за экран
+
+
+
+
+
+func disableBody(disabled):
+	$CollisionShape2D.disabled = disabled
+
+
+
+
+func give_birth_animal(animal,children):
+	print("give_birth_animal")
+	for i in range(children):
+		var instancedObject = load("res://entities/animal/Animal.tscn")
+		var baby = instancedObject.instantiate()
+		var x = animal.position.x + 30*children
+		var y = animal.position.y + 30*children
+		baby.position = Vector2(x,y)
+		animal.get_parent().add_child(baby)
+		baby.set_entity_name("Baby Animal")
+		baby.children = randi_range(1,2)
+		baby.velocity.x = 0
+		baby.velocity.y = 0
+		baby.disableBody(true)
+		
+
+	
+		
+		
+
+
+
+func naming():
+	var animal = self
+	if age <= 3:
+		animal.name = "Baby"
+		$Name.text = animal.name
+	else:
+		animal.name = "Adult"
+		$Name.text = animal.name
+
+
+
+
+
+
+
+func bite():
+	food_location = where_to_go.position
+	
+	while hunger > starvation_limit:
+		
+		animal.velocity = ((food_location - animal.position).normalized() * speed) * Global.speed_up
+		if (food_location - animal.position).length() <= 25:
+			animal.velocity = Vector2(0,0)               #подобраться максимально близко к еде
+			
+		eat_food(where_to_go)	#УКУСИТЬ
+		sleep(3)
+		
+		animal.velocity =  ((animal.position - food_location).normalized() * speed) * Global.speed_up
+		if (food_location - animal.position).length() <= 50:
+			animal.velocity = Vector2(0,0)                 #отойти
+			
+	state = STATE_IDLE
+		
+		
+		
+		
+		
+		
+	
+		
+
+
+func find_nearest_food():
+	var animal = self
+	#print("find_nearest_food")
+	var nearest_food_object : Object
+	var foods = get_tree().get_nodes_in_group("foods")
+	#print(foods)
+	
+	if foods.size() < 1:
+		#print(3)
+		return null
+		
+	#print(food)
+	var s = 100000
+	for food in foods:
+		if (food.position - animal.position).length() <= s:
+			nearest_food_object = food
+			
+			s = (food.position - animal.position).length()
+	if s != 100000:		
+		is_food_found = true
+		#print("is_food_found = true ", nearest_food_object.position.x, nearest_food_object.position.y, "\n")
+		#print(nearest_food_object)
+		return nearest_food_object
+	return null
+	
+	
+	
+	
+	
+func eat_food(food):
+	if food.hp > 0.0:
+		animal.hunger -= saturation_speed
+		#nimal.hunger = 
+		food.hp -= saturation_speed
+		#await(60)
+	if food.hp <= 0.0:
+		food.queue_free()
+		
+		
+		
+		
+		
+#вызывается при смерти от старения. Либо когда это существо кто-то съел
+func move_to_food(food_object, delta):
+	food_location = food_object.position
+	print("move_to_food")
+	animal.velocity = ((food_location - animal.position).normalized() * speed) * Global.speed_up
+	if (food_location - animal.position).length() <= 50:
+		animal.velocity = Vector2(0,0)
+		#print("(food_location - animal.position).length() <= 50:")
+		
+		appetite = true
+		
+	
+

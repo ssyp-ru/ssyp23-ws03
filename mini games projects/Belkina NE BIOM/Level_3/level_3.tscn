@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://b74p3m4i8deyx"]
+
+[ext_resource type="Script" path="res://Level_3/Level_3.gd" id="1_q2303"]
+[ext_resource type="Texture2D" uid="uid://d3f8krgi3gn74" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/background_glacial_mountains.png" id="2_ree8b"]
+[ext_resource type="Texture2D" uid="uid://bewqj4rb78vtx" path="res://props/big-crate.png" id="3_ovv4v"]
+[ext_resource type="Texture2D" uid="uid://chjypmqo30u8d" path="res://props/block-big.png" id="4_b3u1c"]
+[ext_resource type="PackedScene" uid="uid://cc47tnd7gleyh" path="res://Block/block.tscn" id="5_4cggu"]
+[ext_resource type="PackedScene" uid="uid://dyrewf6vuq4ik" path="res://GEM/gem.tscn" id="7_mywjr"]
+[ext_resource type="PackedScene" uid="uid://df2hvoosew3ph" path="res://Hud/hud.tscn" id="8_o8cmr"]
+[ext_resource type="PackedScene" uid="uid://rhdt3n735h6o" path="res://Exit/exit_2.tscn" id="9_bh3ow"]
+[ext_resource type="PackedScene" uid="uid://b1j2i8145uav" path="res://Player/player.tscn" id="10_31wga"]
+[ext_resource type="AudioStream" uid="uid://e25y8mdhax1g" path="res://Music/2863d5f82c6bdea.mp3" id="10_rl5u6"]
+[ext_resource type="PackedScene" uid="uid://lp2tyut6o2wj" path="res://Hud/Hud_gem.tscn" id="11_h8bod"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihwbp"]
+texture = ExtResource("3_ovv4v")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xw1uj"]
+texture = ExtResource("4_b3u1c")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_2vykp"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ihwbp")
+sources/1 = SubResource("TileSetAtlasSource_xw1uj")
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource("1_q2303")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundGlacialMountains" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(335, 296)
+scale = Vector2(1.75, 2.72222)
+texture = ExtResource("2_ree8b")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2vykp")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 0, 196608, 0, 1, 262144, 0, 0, 327680, 0, 1, 393216, 0, 0, 458752, 0, 1, 524288, 0, 0, 589824, 0, 1, 655360, 0, 0, 720896, 0, 1, 786432, 0, 0, 851968, 0, 1, 917504, 0, 0, 983040, 0, 1, 1048576, 0, 0, 1114112, 0, 1, 1179648, 0, 0, 1245184, 0, 1, 1310720, 0, 0, 1376256, 0, 1, 1441792, 0, 0, 1507328, 0, 1, 1572864, 0, 0, 1638400, 0, 1, 1703936, 0, 0, 1769472, 0, 1, 1835008, 0, 0, 1900544, 0, 1, 1966080, 0, 0, 2031616, 0, 1, 2097152, 0, 0, 2162688, 0, 1, 2228224, 0, 0, 2293760, 0, 1, 2359296, 0, 0, 41, 65536, 0, 65577, 65536, 1, 131113, 65536, 0, 196649, 65536, 1, 262185, 65536, 0, 327721, 65536, 1, 393257, 65536, 0, 458793, 65536, 1, 524329, 65536, 0, 589865, 65536, 1, 655401, 65536, 0, 720937, 65536, 1, 786473, 65536, 0, 852009, 65536, 1, 917545, 65536, 0, 983081, 65536, 1, 1048617, 65536, 0, 1114153, 65536, 1, 1179689, 65536, 0, 1245225, 65536, 1, 1310761, 65536, 0, 1376297, 65536, 1, 1441833, 65536, 0, 1507369, 65536, 1, 1572905, 65536, 0, 1638441, 65536, 1, 1703977, 65536, 0, 1769513, 65536, 1, 1835049, 65536, 0, 1900585, 65536, 1, 1966121, 65536, 0, 2031657, 65536, 1, 2097193, 65536, 0, 2162729, 65536, 1, 2228265, 65536, 0, 2293801, 65536, 1, 2359337, 65536, 0, 2359297, 0, 1, 2359298, 65536, 1, 2359299, 0, 1, 2359300, 65536, 1, 2359301, 0, 1, 2359302, 65536, 1, 2359303, 0, 1, 2359304, 65536, 1, 2359305, 0, 1, 2359306, 65536, 1, 2359307, 0, 1, 2359308, 65536, 1, 2359309, 0, 1, 2359310, 65536, 1, 2359311, 0, 1, 2359312, 65536, 1, 2359313, 0, 1, 2359314, 65536, 1, 2359315, 0, 1, 2359316, 65536, 1, 2359317, 0, 1, 2359318, 65536, 1, 2359319, 0, 1, 2359320, 65536, 1, 2359321, 0, 1, 2359322, 65536, 1, 2359323, 0, 1, 2359324, 65536, 1, 2359325, 0, 1, 2359326, 65536, 1, 2359327, 0, 1, 2359328, 65536, 1, 2359329, 0, 1, 2359330, 65536, 1, 2359331, 0, 1, 2359332, 65536, 1, 2359333, 0, 1, 2359334, 65536, 1, 2359335, 0, 1, 2359336, 65536, 1, 1, 0, 0, 2, 65536, 0, 3, 0, 0, 4, 65536, 0, 5, 0, 0, 6, 65536, 0, 7, 0, 0, 8, 65536, 0, 9, 0, 0, 10, 65536, 0, 11, 0, 0, 12, 65536, 0, 13, 0, 0, 14, 65536, 0, 15, 0, 0, 16, 65536, 0, 17, 0, 0, 18, 65536, 0, 19, 0, 0, 20, 65536, 0, 21, 0, 0, 22, 65536, 0, 23, 0, 0, 24, 65536, 0, 25, 0, 0, 26, 65536, 0, 27, 0, 0, 28, 65536, 0, 29, 0, 0, 30, 65536, 0, 31, 0, 0, 32, 65536, 0, 33, 0, 0, 34, 65536, 0, 35, 0, 0, 36, 65536, 0, 37, 0, 0, 38, 65536, 0, 39, 0, 0, 40, 65536, 0, 1179681, 0, 0, 1245217, 0, 1, 1179682, 65536, 0, 1245218, 65536, 1, 393255, 0, 1, 393256, 65536, 1, 393253, 0, 1, 393254, 65536, 1, 393251, 0, 1, 393252, 65536, 1, 1900563, 0, 0, 1966099, 0, 1, 1900564, 65536, 0, 1966100, 65536, 1, 1310744, 0, 0, 1376280, 0, 1, 1310745, 65536, 0, 1376281, 65536, 1, 1900555, 0, 0, 1966091, 0, 1, 1900556, 65536, 0, 1966092, 65536, 1, 1638415, 0, 0, 1703951, 0, 1, 1638416, 65536, 0, 1703952, 65536, 1, 983060, 0, 0, 1048596, 0, 1, 983061, 65536, 0, 1048597, 65536, 1, 524314, 0, 1, 458779, 65536, 0, 524315, 65536, 1, 458778, 0, 0)
+
+[node name="Block3" parent="." instance=ExtResource("5_4cggu")]
+position = Vector2(294, 175)
+
+[node name="Gem" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(335, 218)
+
+[node name="Gem2" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(545, 256)
+
+[node name="Gem3" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(292, 140)
+
+[node name="HUD" parent="." instance=ExtResource("8_o8cmr")]
+position = Vector2(38, 72)
+
+[node name="player" parent="." instance=ExtResource("10_31wga")]
+position = Vector2(84, 554)
+
+[node name="Block" parent="." instance=ExtResource("5_4cggu")]
+position = Vector2(132, 553)
+
+[node name="Block4" parent="." instance=ExtResource("5_4cggu")]
+position = Vector2(166, 269)
+
+[node name="Gem5" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(164, 226)
+
+[node name="Gem6" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(254, 376)
+
+[node name="Gem7" parent="." instance=ExtResource("7_mywjr")]
+position = Vector2(322, 440)
+
+[node name="Exit_2" parent="." instance=ExtResource("9_bh3ow")]
+position = Vector2(642, 76)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_rl5u6")
+
+[node name="Hud_gem" parent="." instance=ExtResource("11_h8bod")]
+position = Vector2(642, 123)

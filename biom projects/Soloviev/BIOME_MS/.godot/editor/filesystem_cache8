@@ -1,0 +1,78 @@
+2a60927148abd1d33b818b535e306557
+::res://::1689571965
+1664323987_1-damion-club-p-derevo-piksel-art-instagram-3.png::CompressedTexture2D::8463175763263556876::1689393752::1689393748::1::::<><>::
+grass_tileset_16x16.png::CompressedTexture2D::621253797991923293::1689395045::1689395051::1::::<><>::
+grass_tileset_16x16_preview_0.png::CompressedTexture2D::5999479479613872635::1689395078::1689395078::1::::<><>::
+icon.svg::CompressedTexture2D::1121229493490364187::1689390102::1689390103::1::::<><>::
+Main.gd::GDScript::-1::1689390103::0::1::::<>Node2D<>::
+Main.tscn::PackedScene::6063253571208849660::1689413906::0::1::::<><>::res://Main.gd<>uid://d0vbsrnwxkroq<>uid://i367u62h6d3r<>uid://crqgsymvm1p5t<>uid://bkswsgqdvfioi<>uid://d0uc405s8r66y<>uid://bmvfcxfsbi3rq<>uid://ctmdmwq6i120p<>uid://dll5w314jtfcn<>uid://bwhnlxakf1std<>uid://cruyf4v3bx0ks
+Планы и проблемы.txt::TextFile::-1::1689390103::0::1::::<><>::
+::res://ASSETS/::1689569266
+apple.png::CompressedTexture2D::7934312572545572844::1689390106::1689390106::1::::<><>::
+cherry.png::CompressedTexture2D::7073232456459386319::1689390106::1689390106::1::::<><>::
+lions.png::CompressedTexture2D::1859207138450804217::1689390106::1689390106::1::::<><>::
+LQBQNb-PhotoRoom.png-PhotoRoom (1).png::CompressedTexture2D::6620859241852684163::1689394140::1689395304::1::::<><>::
+meat.png::CompressedTexture2D::6815618123230146126::1689390106::1689390106::1::::<><>::
+monster018-fox.webp::CompressedTexture2D::5114331298599394627::1689400796::1689400804::1::::<><>::
+pear.png::CompressedTexture2D::8096179740501964191::1689390106::1689390106::1::::<><>::
+rabbits.png::CompressedTexture2D::8931028661686144609::1689390106::1689390106::1::::<><>::
+strawberry.png::CompressedTexture2D::5174687988973373749::1689390106::1689390106::1::::<><>::
+whtdragon's animals and running horses- now with more dragons!.png::CompressedTexture2D::1471936666131943008::1689390106::1689390106::1::::<><>::
+wolfes.png::CompressedTexture2D::4583147354478812251::1689390106::1689390106::1::::<><>::
+::res://autoload/::1689569266
+Global.gd::GDScript::-1::1689390106::0::1::::<>Node<>::
+::res://entities/::1689569266
+::res://entities/animal/::1689569266
+Animal.gd::GDScript::-1::1689404867::0::1::::<>CharacterBody2D<>::
+Animal.tscn::PackedScene::179493475110115388::1689413905::0::1::::<><>::uid://cq80an5lofhno
+::res://entities/entity/::1689569266
+Entity.gd::GDScript::-1::1689398187::0::1::::<>CharacterBody2D<>::
+Entity.tscn::PackedScene::1067102674114265468::1689413905::0::1::::<><>::res://entities/entity/Entity.gd
+::res://entities/FC Meat/::1689569266
+First_consument_meat.gd::GDScript::-1::1689390106::0::1::::<>CharacterBody2D<>::
+First_consument_meat.tscn::PackedScene::3126836177799198300::1689390106::0::1::::<><>::uid://cml0sduhmouq7<>res://entities/FC Meat/First_consument_meat.gd
+::res://entities/food/::1689569266
+Food.gd::GDScript::-1::1689390106::0::1::::<>CharacterBody2D<>::
+Food.tscn::PackedScene::4660980227169288479::1689413905::0::1::::<><>::uid://bh0fs8h5ou72s<>res://entities/food/Food.gd
+::res://entities/Fox/::1689569266
+Fox.gd::GDScript::-1::1689407669::0::1::::<>CharacterBody2D<>::
+Fox.tscn::PackedScene::8955445279410611082::1689413905::0::1::::<><>::uid://cx8cdt5l02dwc<>res://entities/Fox/Fox.gd<>uid://ce4oj3nwkgm7d
+::res://entities/fruit/::1689569266
+Fruit.gd::GDScript::-1::1689399915::0::1::::<>CharacterBody2D<>::
+Fruit.tscn::PackedScene::3823994941574027296::1689413905::0::1::::<><>::uid://b7n2ws333887t<>res://entities/fruit/Fruit.gd
+::res://entities/Herbivore/::1689569266
+Herbivore.gd::GDScript::-1::1689390107::0::1::::<>CharacterBody2D<>::
+Herbivore.tscn::PackedScene::5995584787816410620::1689390107::0::1::::<><>::uid://cs7h4no4quim<>res://entities/Herbivore/Herbivore.gd
+::res://entities/Lion/::1689569266
+Lion.gd::GDScript::-1::1689407758::0::1::::<>CharacterBody2D<>::
+Lion.tscn::PackedScene::6008806958002376146::1689413905::0::1::::<><>::uid://cx8cdt5l02dwc<>res://entities/Lion/Lion.gd<>uid://1qu4tv803jw0
+::res://entities/meat/::1689569266
+Meat.gd::GDScript::-1::1689390107::0::1::::<>CharacterBody2D<>::
+Meat.tscn::PackedScene::5639365904247494688::1689413905::0::1::::<><>::uid://b7n2ws333887t<>res://entities/meat/Meat.gd<>uid://c4dsh8listgne
+::res://entities/Mouse/::1689569266
+Mouse.gd::GDScript::-1::1689401290::0::1::::<>CharacterBody2D<>::
+Mouse.tscn::PackedScene::6131406691713509501::1689413905::0::1::::<><>::uid://crokn10mepqf1<>res://entities/Mouse/Mouse.gd<>uid://u8at1ut2o305
+::res://entities/organism/::1689569266
+Organism.gd::GDScript::-1::1689397981::0::1::::<>CharacterBody2D<>::
+Organism.tscn::PackedScene::5965505985964242252::1689413905::0::1::::<><>::uid://pg6a4b8qyhjo<>res://entities/animal/Animal.gd
+::res://entities/plant/::1689569266
+Plant.gd::GDScript::-1::1689405700::0::1::::<>CharacterBody2D<>::
+Plant.tscn::PackedScene::8957428850158560752::1689413905::0::1::::<><>::uid://cq80an5lofhno<>res://entities/plant/Plant.gd<>uid://dstvjegwnc701
+::res://entities/Predator/::1689569266
+Predator.gd::GDScript::-1::1689390107::0::1::::<>CharacterBody2D<>::
+Predator.tscn::PackedScene::6455437073134215874::1689390107::0::1::::<><>::uid://cs7h4no4quim<>res://entities/Predator/Predator.gd
+::res://entities/Rabbit/::1689569266
+Rabbit.gd::GDScript::-1::1689405606::0::1::::<>CharacterBody2D<>::
+Rabbit.tscn::PackedScene::3945836061146282417::1689413905::0::1::::<><>::uid://crokn10mepqf1<>res://entities/Rabbit/Rabbit.gd<>uid://d0ii0chvopwvh
+::res://entities/SC Meat/::1689569266
+Second_consument_meat.gd::GDScript::-1::1689390107::0::1::::<>CharacterBody2D<>::
+Second_consument_meat.tscn::PackedScene::3426497973946958474::1689413906::0::1::::<><>::uid://cml0sduhmouq7<>res://entities/SC Meat/Second_consument_meat.gd
+::res://entities/thing/::1689569266
+Thing.gd::GDScript::-1::1689390107::0::1::::<>CharacterBody2D<>::
+Thing.tscn::PackedScene::2929689507731723688::1689390107::0::1::::<><>::uid://pg6a4b8qyhjo<>res://entities/thing/Thing.gd
+::res://entities/Wolf/::1689569266
+Wolf.gd::GDScript::-1::1689404941::0::1::::<>CharacterBody2D<>::
+Wolf.tscn::PackedScene::7955909795790344365::1689413905::0::1::::<><>::uid://cx8cdt5l02dwc<>res://entities/Wolf/Wolf.gd<>uid://b6kd1da3da2jn
+::res://mainhero/::1689569266
+mainhero.gd::GDScript::-1::1689400969::0::1::::<>Camera2D<>::
+mainhero.tscn::PackedScene::3272347113316983826::1689413905::0::1::::<><>::res://mainhero/mainhero.gd

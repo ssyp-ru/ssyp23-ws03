@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://dd6v8l06s4edn"]
+
+[ext_resource type="PackedScene" uid="uid://doowbsf7gevb0" path="res://entities/animal/Animal.tscn" id="1_7kyu7"]
+[ext_resource type="Script" path="res://Goat.gd" id="2_js4rc"]
+[ext_resource type="Texture2D" uid="uid://dtkmqk3am5ul2" path="res://Res/Коза.png" id="3_x2sfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hj0p"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc8hx"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2p3"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr4c8"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbbbl"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srkwf"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hiux"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gan2"]
+atlas = ExtResource("3_x2sfc")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnmq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hj0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc8hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc2p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr4c8")
+}],
+"loop": true,
+"name": &"Goat left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbbbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srkwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hiux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gan2")
+}],
+"loop": true,
+"name": &"Goat right",
+"speed": 5.0
+}]
+
+[node name="Goat" instance=ExtResource("1_7kyu7")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_js4rc")
+plant = " "
+
+[node name="ColorRect" parent="." index="2"]
+visible = false
+color = Color(0.929412, 0.690196, 0.760784, 1)
+
+[node name="Label" parent="." index="4"]
+visible = true
+
+[node name="Label2" parent="." index="5"]
+visible = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="6"]
+sprite_frames = SubResource("SpriteFrames_vnmq5")
+animation = &"Goat right"

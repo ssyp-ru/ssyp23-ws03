@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://7huj3thqg0ln"]
+
+[ext_resource type="PackedScene" uid="uid://denggocd1jhmw" path="res://entities/plant/Plant.tscn" id="1_5kpee"]
+[ext_resource type="Script" path="res://entities/Tree/Tree.gd" id="2_g05yp"]
+[ext_resource type="Texture2D" uid="uid://clb3grpyngfeo" path="res://Res/kisspng-tile-based-video-game-rpg-maker-vx-tree-5af5b6981470c8.0830347815260525040837.png" id="3_b8wkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtl2g"]
+atlas = ExtResource("3_b8wkv")
+region = Rect2(0, 0, 140, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65kmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtl2g")
+}],
+"loop": true,
+"name": &"Tree",
+"speed": 5.0
+}]
+
+[node name="Tree" instance=ExtResource("1_5kpee")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("2_g05yp")
+
+[node name="ColorRect" parent="CollisionShape2D" index="0"]
+visible = false
+color = Color(0.450455, 0.247517, 0.108738, 1)
+
+[node name="Label" parent="." index="3"]
+visible = true
+
+[node name="Label2" parent="." index="4"]
+visible = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="6"]
+position = Vector2(-3, -9)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_65kmx")
+animation = &"Tree"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crokn10mepqf1"]
+
+[ext_resource type="PackedScene" uid="uid://cs7h4no4quim" path="res://entities/animal/Animal.tscn" id="1_70hd7"]
+[ext_resource type="Script" path="res://entities/Herbivore/Herbivore.gd" id="2_xgu7m"]
+
+[node name="Herbivore" groups=["SC_food", "first_consuments"] instance=ExtResource("1_70hd7")]
+script = ExtResource("2_xgu7m")
+
+[node name="ColorRect" parent="." index="2"]
+color = Color(0.313726, 0.596078, 0.537255, 1)

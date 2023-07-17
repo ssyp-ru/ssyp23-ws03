@@ -1,0 +1,197 @@
+[gd_scene load_steps=15 format=3 uid="uid://csnc5u65kgfii"]
+
+[ext_resource type="PackedScene" uid="uid://b7n2ws333887t" path="res://entities/food/Food.tscn" id="1_2fs5l"]
+[ext_resource type="Script" path="res://Main.gd" id="1_tui1h"]
+[ext_resource type="PackedScene" uid="uid://jrbednu6pj7g" path="res://entities/wolf/wolf.tscn" id="5_chnpg"]
+[ext_resource type="PackedScene" uid="uid://7huj3thqg0ln" path="res://entities/Tree/Tree.tscn" id="5_plgvk"]
+[ext_resource type="PackedScene" uid="uid://b83qgfgrsh6e3" path="res://entities/Grass/Grass.tscn" id="6_33ptd"]
+[ext_resource type="PackedScene" uid="uid://0wory65koad4" path="res://goats_den.tscn" id="6_bqjqq"]
+[ext_resource type="PackedScene" uid="uid://dd6v8l06s4edn" path="res://entities/Goat/goat.tscn" id="6_f6gy8"]
+[ext_resource type="PackedScene" uid="uid://ntt8xrt0fuhl" path="res://wolves_den.tscn" id="7_u1wlt"]
+[ext_resource type="PackedScene" uid="uid://btvf3qu66dp5s" path="res://entities/human/human.tscn" id="9_j6sxj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w2as"]
+bg_color = Color(0.764706, 0.65098, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rofef"]
+bg_color = Color(0.180392, 0.721569, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67xad"]
+bg_color = Color(0.266667, 0.403922, 0.670588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_intln"]
+bg_color = Color(1, 0.721569, 0.717647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw21m"]
+bg_color = Color(0.364706, 0.0901961, 0.0666667, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_tui1h")
+
+[node name="WolvesDen" parent="." instance=ExtResource("7_u1wlt")]
+offset_left = -8.0
+offset_top = -11.0
+offset_right = 128.0
+offset_bottom = 38.0
+
+[node name="GoatsDen" parent="." instance=ExtResource("6_bqjqq")]
+offset_left = 108.0
+offset_top = -1.0
+offset_right = 248.0
+offset_bottom = 48.0
+
+[node name="Food" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Food1" parent="Food" instance=ExtResource("1_2fs5l")]
+position = Vector2(849, 173)
+
+[node name="Plant" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 303.0
+offset_top = 379.0
+offset_right = 343.0
+offset_bottom = 419.0
+
+[node name="Tree" parent="Plant" instance=ExtResource("5_plgvk")]
+position = Vector2(630, -127)
+
+[node name="Tree2" parent="Plant" instance=ExtResource("5_plgvk")]
+position = Vector2(630, -127)
+
+[node name="Tree3" parent="Plant" instance=ExtResource("5_plgvk")]
+position = Vector2(630, -127)
+
+[node name="Tree4" parent="Plant" instance=ExtResource("5_plgvk")]
+position = Vector2(633, -132)
+
+[node name="Wolf" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 376.0
+offset_top = 394.0
+offset_right = 416.0
+offset_bottom = 434.0
+
+[node name="Wolf" parent="Wolf" instance=ExtResource("5_chnpg")]
+position = Vector2(-43, 21)
+
+[node name="Goat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 519.0
+offset_top = 393.0
+offset_right = 559.0
+offset_bottom = 435.0
+
+[node name="Goat" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(170, 17)
+
+[node name="Goat4" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(170, 17)
+
+[node name="Goat5" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(170, 17)
+
+[node name="Goat6" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(170, 17)
+
+[node name="Goat7" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(170, 17)
+scale = Vector2(3, 3)
+
+[node name="Goat2" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(160, 26)
+
+[node name="Goat3" parent="Goat" instance=ExtResource("6_f6gy8")]
+position = Vector2(167, 23)
+
+[node name="Grass" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Grass" parent="Grass" instance=ExtResource("6_33ptd")]
+position = Vector2(488, 490)
+
+[node name="Grass2" parent="Grass" instance=ExtResource("6_33ptd")]
+position = Vector2(526, 489)
+
+[node name="Grass3" parent="Grass" instance=ExtResource("6_33ptd")]
+position = Vector2(582, 558)
+
+[node name="Human" parent="." instance=ExtResource("9_j6sxj")]
+position = Vector2(246, 334)
+
+[node name="Wolf2" parent="." instance=ExtResource("5_chnpg")]
+position = Vector2(351, 420)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="Button" parent="CanvasLayer"]
+offset_left = 98.0
+offset_top = 28.0
+offset_right = 274.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 50
+text = "Пауза"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 370.0
+offset_top = 12.0
+offset_right = 668.0
+offset_bottom = 73.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3w2as")
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 372.0
+offset_top = 78.0
+offset_right = 670.0
+offset_bottom = 139.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_rofef")
+
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 374.0
+offset_top = 147.0
+offset_right = 672.0
+offset_bottom = 208.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_67xad")
+
+[node name="ProgressBar4" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 376.0
+offset_top = 217.0
+offset_right = 674.0
+offset_bottom = 278.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_intln")
+
+[node name="ProgressBar5" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 380.0
+offset_top = 291.0
+offset_right = 678.0
+offset_bottom = 352.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_sw21m")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 290.0
+offset_top = 18.0
+offset_right = 353.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 290.0
+offset_top = 122.0
+offset_right = 353.0
+offset_bottom = 178.0
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

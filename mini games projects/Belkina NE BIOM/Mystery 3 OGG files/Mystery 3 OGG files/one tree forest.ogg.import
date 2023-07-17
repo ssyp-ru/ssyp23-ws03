@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dn0wfg6b7yc7g"
+path="res://.godot/imported/one tree forest.ogg-48ee94f0ee50f615dda6821f3134f0bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/one tree forest.ogg"
+dest_files=["res://.godot/imported/one tree forest.ogg-48ee94f0ee50f615dda6821f3134f0bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

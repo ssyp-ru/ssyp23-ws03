@@ -1,0 +1,29 @@
+extends StaticBody2D
+
+func _ready():
+	pass
+	
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		Global.upin1 = 0
+
+
+
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("player"):
+		Global.upin1 = 1
+
+func  _process(delta):
+	if $"t2r".text == str(Global.ke):
+		Global.tru_ckash_box = 2
+	else:
+		Global.tp_crash1 = 2
+	if Global.upin1 != 1:
+		if Input.is_action_pressed("box up"):
+			Global.press_start = 1
+			if $"t2r".text == str(Global.ke):
+				Global.truek = 1
+			await get_tree().create_timer(0.5).timeout
+			$".".position.y = 800
+			Global.ishik = 2

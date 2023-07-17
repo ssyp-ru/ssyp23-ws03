@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://vvflkebw1hci"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn12x"]
+size = Vector2(15, 13)
+
+[node name="bullet" type="CharacterBody2D" groups=["bullet"]]
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yn12x")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

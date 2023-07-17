@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7n2ws333887t"]
+
+[ext_resource type="PackedScene" uid="uid://bh0fs8h5ou72s" path="res://entities/thing/Thing.tscn" id="1_077qi"]
+[ext_resource type="Script" path="res://entities/food/Food.gd" id="2_kyk6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1tl"]
+
+[node name="Food" groups=["foodgroup"] instance=ExtResource("1_077qi")]
+collision_layer = 3
+script = ExtResource("2_kyk6r")
+_name = "ЗАГЛУШКА"
+speed = 100.0
+max_hp = 100.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_3u1tl")
+
+[node name="HealthBar" parent="." index="1"]
+offset_top = 11.0
+offset_bottom = 38.0
+
+[node name="HungerBar" parent="." index="2"]
+visible = false
+modulate = Color(1, 1, 1, 1)
+offset_top = 17.0
+offset_bottom = 44.0
+
+[node name="Age" parent="." index="3"]
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 30.0
+offset_bottom = 19.0
+text = ""
+label_settings = null
+
+[node name="Name" parent="." index="4"]
+offset_left = -56.0
+offset_top = -69.0
+offset_right = 57.0
+offset_bottom = -43.0
+text = ". . ."
+vertical_alignment = 0

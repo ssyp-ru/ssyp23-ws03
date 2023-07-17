@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0uc405s8r66y"]
+
+[ext_resource type="PackedScene" uid="uid://cx8cdt5l02dwc" path="res://entities/Predator/Predator.tscn" id="1_yr5tq"]
+[ext_resource type="Script" path="res://entities/Fox/Fox.gd" id="2_au416"]
+[ext_resource type="Texture2D" uid="uid://ce4oj3nwkgm7d" path="res://ASSETS/monster018-fox.webp" id="3_3necl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ca2"]
+atlas = ExtResource("3_3necl")
+region = Rect2(0, 88, 47, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcrtf"]
+atlas = ExtResource("3_3necl")
+region = Rect2(47, 88, 47, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6eux"]
+atlas = ExtResource("3_3necl")
+region = Rect2(94, 88, 47, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7yhh"]
+atlas = ExtResource("3_3necl")
+region = Rect2(141, 88, 47, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfadw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13ca2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcrtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6eux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7yhh")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Fox" groups=["foxes", "second_consuments"] instance=ExtResource("1_yr5tq")]
+script = ExtResource("2_au416")
+
+[node name="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_gfadw")
+frame = 3
+frame_progress = 0.203987

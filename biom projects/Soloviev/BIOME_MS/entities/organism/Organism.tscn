@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq80an5lofhno"]
+
+[ext_resource type="PackedScene" uid="uid://pg6a4b8qyhjo" path="res://entities/entity/Entity.tscn" id="1_804ty"]
+[ext_resource type="Script" path="res://entities/animal/Animal.gd" id="2_pvtw5"]
+
+[node name="Organism" instance=ExtResource("1_804ty")]
+script = ExtResource("2_pvtw5")
+bite_force = 30
+children = 0
+min_childbearing_age = 3
+max_childbearing_age = 20
+
+[node name="HealthBar" parent="." index="1"]
+offset_top = 22.0
+offset_bottom = 49.0
+
+[node name="HungerBar" parent="." index="2"]
+offset_top = 28.0
+offset_bottom = 55.0
+
+[node name="Name" parent="." index="4"]
+offset_left = -19.0
+offset_top = -36.0
+offset_right = 61.0
+offset_bottom = -10.0
+scale = Vector2(0.5, 0.5)
+vertical_alignment = 0
+autowrap_mode = 3
+
+[node name="position" parent="." index="5"]
+offset_top = -26.0
+offset_bottom = -3.0
+horizontal_alignment = 1
+vertical_alignment = 1

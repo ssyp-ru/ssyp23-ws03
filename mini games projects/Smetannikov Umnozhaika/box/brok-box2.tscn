@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://irrkh83pmhdt"]
+
+[ext_resource type="Texture2D" uid="uid://bkq6qyhuk356s" path="res://box/big-crate.png" id="1_5otsa"]
+[ext_resource type="Script" path="res://box/brok-box2.gd" id="1_d21cs"]
+[ext_resource type="Texture2D" uid="uid://dej0yj4ocqes2" path="res://box/лава.jpg" id="2_a3lga"]
+
+[node name="3f" type="Node2D"]
+script = ExtResource("1_d21cs")
+
+[node name="Big-crate" type="Sprite2D" parent="."]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("1_5otsa")
+
+[node name="Лава" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_a3lga")

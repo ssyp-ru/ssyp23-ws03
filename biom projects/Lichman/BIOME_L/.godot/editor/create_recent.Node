@@ -1,0 +1,9 @@
+Button
+CanvasLayer
+Camera2D
+AnimatedSprite2D
+ColorRect
+AudioStreamPlayer2D
+Control
+ProgressBar
+CharacterBody2D

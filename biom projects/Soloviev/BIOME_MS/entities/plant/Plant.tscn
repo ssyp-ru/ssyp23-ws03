@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0vbsrnwxkroq"]
+
+[ext_resource type="PackedScene" uid="uid://cq80an5lofhno" path="res://entities/organism/Organism.tscn" id="1_771x0"]
+[ext_resource type="Script" path="res://entities/plant/Plant.gd" id="2_iny5q"]
+[ext_resource type="Texture2D" uid="uid://dstvjegwnc701" path="res://1664323987_1-damion-club-p-derevo-piksel-art-instagram-3.png" id="3_8opwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc3kd"]
+size = Vector2(24, 57)
+
+[node name="Plant" groups=["SC_food", "plants"] instance=ExtResource("1_771x0")]
+script = ExtResource("2_iny5q")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(2, -18.5)
+shape = SubResource("RectangleShape2D_nc3kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="6"]
+position = Vector2(3, -52)
+scale = Vector2(0.224306, 0.224306)
+texture = ExtResource("3_8opwq")

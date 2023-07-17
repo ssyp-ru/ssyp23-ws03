@@ -1,0 +1,15 @@
+res://entities/entity/Entity.tscn
+res://entities/food/Food.tscn
+res://entities/organism/Organism.tscn
+res://entities/animal/Animal.tscn
+res://entities/plant/Plant.tscn
+res://mainhero/mainhero.tscn
+res://entities/fruit/Fruit.tscn
+res://entities/meat/Meat.tscn
+res://entities/Rabbit/Rabbit.tscn
+res://entities/Fox/Fox.tscn
+res://entities/Wolf/Wolf.tscn
+res://entities/Lion/Lion.tscn
+res://entities/Mouse/Mouse.tscn
+res://Main.tscn
+res://entities/SC Meat/Second_consument_meat.tscn

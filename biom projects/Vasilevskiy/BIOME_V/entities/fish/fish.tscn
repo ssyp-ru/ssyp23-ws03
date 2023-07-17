@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs0e0t56ofmp6"]
+
+[ext_resource type="PackedScene" uid="uid://doowbsf7gevb0" path="res://entities/animal/Animal.tscn" id="1_72nlp"]
+[ext_resource type="Script" path="res://entities/fish/fish.gd" id="2_m7o5b"]
+
+[node name="Fish" instance=ExtResource("1_72nlp")]
+script = ExtResource("2_m7o5b")
+
+[node name="ColorRect" parent="." index="2"]
+color = Color(0.141176, 0.341176, 0.717647, 1)

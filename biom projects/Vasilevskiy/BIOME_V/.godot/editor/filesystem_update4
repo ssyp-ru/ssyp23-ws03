@@ -1,0 +1,10 @@
+res://Main.tscn
+res://entities/animal/Animal.tscn
+res://entities/plant/Plant.tscn
+res://entities/animalGrasseEater/AnimalGrassEater.tscn
+res://entities/entity/Entity.tscn
+res://entities/food/Food.tscn
+res://menu.tscn
+res://accessories/rock.tscn
+res://accessories/cactus.tscn
+res://entities/thing/Thing.tscn

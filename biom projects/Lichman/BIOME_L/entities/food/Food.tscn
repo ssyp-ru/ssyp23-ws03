@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7n2ws333887t"]
+
+[ext_resource type="PackedScene" uid="uid://bh0fs8h5ou72s" path="res://entities/thing/Thing.tscn" id="1_077qi"]
+[ext_resource type="Script" path="res://entities/food/Food.gd" id="2_kyk6r"]
+[ext_resource type="Texture2D" uid="uid://dwshdeodh6t2k" path="res://Res/Grass.png" id="3_np0cp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u1tl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg28j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_np0cp")
+}],
+"loop": true,
+"name": &"Food",
+"speed": 5.0
+}]
+
+[node name="Food" instance=ExtResource("1_077qi")]
+script = ExtResource("2_kyk6r")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_3u1tl")
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+visible = false
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.8, 0.643137, 0.105882, 1)
+
+[node name="Label" parent="." index="4"]
+max_value = 100.0
+
+[node name="Label2" parent="." index="5"]
+max_value = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="6"]
+modulate = Color(1, 0.25098, 0.317647, 1)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_vg28j")
+animation = &"Food"

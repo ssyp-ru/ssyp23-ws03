@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://dumgmdfde3rtr"]
+
+[ext_resource type="PackedScene" uid="uid://bf61tuutio5er" path="res://entities/organism/Organism.tscn" id="1_3u8gy"]
+[ext_resource type="Script" path="res://entities/animalGrasseEater/AnimalGrassEater.gd" id="2_5g4sf"]
+[ext_resource type="Texture2D" uid="uid://cbws5gexgvms6" path="res://pixel_animals.png" id="3_js65l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbwtn"]
+size = Vector2(20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rfvy"]
+atlas = ExtResource("3_js65l")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upm2o"]
+atlas = ExtResource("3_js65l")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svkvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rfvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upm2o")
+}],
+"loop": true,
+"name": &"rabbit anim",
+"speed": 5.0
+}]
+
+[node name="AnimalGrassEater" groups=["grass_eater", "true_grass_eater"] instance=ExtResource("1_3u8gy")]
+script = ExtResource("2_5g4sf")
+eating_radius = 120
+
+[node name="Name" parent="." index="0"]
+offset_left = -55.0
+offset_top = -79.0
+offset_right = 58.0
+offset_bottom = -53.0
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_qbwtn")
+
+[node name="HungerBar" parent="." index="2"]
+offset_left = -37.0
+offset_top = -41.0
+offset_right = 219.0
+offset_bottom = -14.0
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -37.0
+offset_top = -53.0
+offset_right = 219.0
+offset_bottom = -26.0
+
+[node name="Age" parent="." index="4"]
+visible = false
+offset_left = -29.0
+offset_top = -34.0
+offset_right = 171.0
+offset_bottom = 21.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
+z_index = 2
+position = Vector2(-5.96046e-08, -1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_svkvg")
+animation = &"rabbit anim"
+
+[node name="Yum" type="Label" parent="." index="6"]
+visible = false
+z_index = 5
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 80
+text = "Yum!"
+
+[node name="Panel" type="Panel" parent="Yum" index="0"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 100.0

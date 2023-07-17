@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://dll5w314jtfcn"]
+
+[ext_resource type="PackedScene" uid="uid://cx8cdt5l02dwc" path="res://entities/Predator/Predator.tscn" id="1_onnlo"]
+[ext_resource type="Script" path="res://entities/Wolf/Wolf.gd" id="2_nk3oe"]
+[ext_resource type="Texture2D" uid="uid://b6kd1da3da2jn" path="res://ASSETS/wolfes.png" id="3_tp4go"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yig2"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(376, 282, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b8r2"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(423, 282, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kadyp"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(470, 282, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdwjc"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(376, 47, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdet2"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(423, 47, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xo3l"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(470, 47, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wawrn"]
+atlas = ExtResource("3_tp4go")
+region = Rect2(517, 47, 47, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0tiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yig2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b8r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kadyp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdwjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdet2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xo3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wawrn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Wolf" groups=["wolfes"] instance=ExtResource("1_onnlo")]
+script = ExtResource("2_nk3oe")
+
+[node name="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_g0tiw")
+animation = &"idle"

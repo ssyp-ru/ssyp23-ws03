@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0wory65koad4"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 669.0
+offset_bottom = 439.0
+color = Color(1, 1, 1, 0)
+
+[node name="GoatsDen" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 388.0
+offset_right = 667.0
+offset_bottom = 438.0
+color = Color(0.996078, 0.780392, 0.847059, 1)

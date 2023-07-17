@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx8w3wkdjei1n"]
+
+[ext_resource type="Script" path="res://Sound/sound.gd" id="1_7xlo2"]
+[ext_resource type="AudioStream" uid="uid://cbxy7wttyqskv" path="res://Music/2f535bb294ca3a9.mp3" id="2_dnvvt"]
+[ext_resource type="Texture2D" uid="uid://c2ljs4plqw5wc" path="res://Sunny Cloud Background/Sunny Cloud Background.png" id="3_3dkbl"]
+
+[node name="Sound" type="Node2D"]
+script = ExtResource("1_7xlo2")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 198.0
+offset_top = 253.0
+offset_right = 480.0
+offset_bottom = 313.0
+text = "Игра"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dnvvt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="SunnyCloudBackground" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(335.5, 297.25)
+scale = Vector2(0.347396, 0.549537)
+texture = ExtResource("3_3dkbl")
+
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

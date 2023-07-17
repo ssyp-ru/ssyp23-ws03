@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://denggocd1jhmw"]
+
+[ext_resource type="PackedScene" uid="uid://cq80an5lofhno" path="res://entities/organism/Organism.tscn" id="1_771x0"]
+[ext_resource type="Script" path="res://entities/plant/Plant.gd" id="2_iny5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khbg2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksto0"]
+radius = 207.002
+
+[node name="Plant" instance=ExtResource("1_771x0")]
+script = ExtResource("2_iny5q")
+max_want_eat = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_khbg2")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" index="0"]
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.6, 0.768627, 0.266667, 1)
+
+[node name="Label" parent="." index="3"]
+max_value = 100.0
+
+[node name="Label2" parent="." index="4"]
+max_value = 100.0
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+position = Vector2(-1, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_ksto0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

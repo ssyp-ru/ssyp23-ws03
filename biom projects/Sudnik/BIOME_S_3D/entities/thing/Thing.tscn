@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh0fs8h5ou72s"]
+
+[ext_resource type="PackedScene" uid="uid://pg6a4b8qyhjo" path="res://entities/entity/Entity.tscn" id="1_ey7mt"]
+[ext_resource type="Script" path="res://entities/thing/Thing.gd" id="2_bx8a4"]
+
+[node name="Thing" instance=ExtResource("1_ey7mt")]
+script = ExtResource("2_bx8a4")
+_name = null
+speed = null
+max_hp = null
+age = null
+max_age = null
+aging_speed = null
+hunger = null
+max_hunger = null
+hunger_speed = null
+sleep_chance = null
+hunt_chance = null
+max_sleep_time = null
+hunt2_chance = null

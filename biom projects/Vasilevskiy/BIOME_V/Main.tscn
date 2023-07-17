@@ -1,0 +1,228 @@
+[gd_scene load_steps=12 format=3 uid="uid://csnc5u65kgfii"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_tqpy6"]
+[ext_resource type="Texture2D" uid="uid://cbws5gexgvms6" path="res://pixel_animals.png" id="3_h2bxg"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="4_p2tkt"]
+[ext_resource type="Texture2D" uid="uid://clebbu5x5ga4i" path="res://apple.png" id="5_t7b3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wins"]
+atlas = ExtResource("3_h2bxg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs64u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wins")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoy5u"]
+atlas = ExtResource("3_h2bxg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvra7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoy5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fxqw"]
+atlas = ExtResource("3_h2bxg")
+region = Rect2(16, 96, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1raht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fxqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nrap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t7b3e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_tqpy6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+zoom = Vector2(0.6, 0.6)
+script = ExtResource("4_p2tkt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseButton" type="Button" parent="CanvasLayer"]
+offset_left = 131.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 38.0
+text = "Pause
+"
+
+[node name="ButtonSpeedUp" type="Button" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 128.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "УСКОРЕНИЕ"
+
+[node name="версия шаблона" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 0.5
+"
+horizontal_alignment = 2
+
+[node name="PredatorBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 197.0
+offset_top = 9.0
+offset_right = 298.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GrassEaterBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0, 0.376471, 1, 1)
+offset_left = 306.5
+offset_top = 9.5
+offset_right = 411.5
+offset_bottom = 36.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="PlantBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0, 1, 0, 1)
+offset_left = 421.5
+offset_top = 9.0
+offset_right = 527.5
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="FoodBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(1, 0.635294, 0.0862745, 1)
+offset_left = 539.875
+offset_top = 8.60001
+offset_right = 652.875
+offset_bottom = 35.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="AgeCount" type="Label" parent="CanvasLayer"]
+offset_left = 661.0
+offset_top = 10.0
+offset_right = 834.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = " 12  years"
+
+[node name="Predators" type="Label" parent="CanvasLayer"]
+offset_left = 196.0
+offset_top = 40.0
+offset_right = 296.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="GrassEaters" type="Label" parent="CanvasLayer"]
+offset_left = 308.0
+offset_top = 40.0
+offset_right = 408.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="Plants" type="Label" parent="CanvasLayer"]
+offset_left = 426.0
+offset_top = 40.0
+offset_right = 526.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="Food" type="Label" parent="CanvasLayer"]
+offset_left = 545.0
+offset_top = 40.0
+offset_right = 645.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -230.0
+offset_top = 6.0
+offset_right = -7.0
+offset_bottom = 48.0
+grow_horizontal = 0
+text = "To Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="FoxSprite" type="AnimatedSprite2D" parent="CanvasLayer"]
+z_index = 5
+position = Vector2(207, 24)
+scale = Vector2(2.98438, 2.98438)
+sprite_frames = SubResource("SpriteFrames_hs64u")
+
+[node name="RabbitSprite" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(316.5, 20.5)
+scale = Vector2(2.6875, 2.6875)
+sprite_frames = SubResource("SpriteFrames_xvra7")
+
+[node name="TreeSprite" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(429, 12)
+scale = Vector2(1.6875, 1.6875)
+sprite_frames = SubResource("SpriteFrames_1raht")
+
+[node name="FoodSprite2" type="AnimatedSprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(548, 5)
+scale = Vector2(6.3, 6.3)
+sprite_frames = SubResource("SpriteFrames_4nrap")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.713726)
+offset_left = 660.0
+offset_top = 9.0
+offset_right = 742.0
+offset_bottom = 36.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, 0)
+motion_mirroring = Vector2(8334, 4167)
+
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/ButtonSpeedUp" to="." method="_on_button_speed_up_toggled"]
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=17 format=3 uid="uid://bwhnlxakf1std"]
+
+[ext_resource type="PackedScene" uid="uid://crokn10mepqf1" path="res://entities/Herbivore/Herbivore.tscn" id="1_m7oh1"]
+[ext_resource type="Script" path="res://entities/Rabbit/Rabbit.gd" id="2_3n7b2"]
+[ext_resource type="Texture2D" uid="uid://d0ii0chvopwvh" path="res://ASSETS/rabbits.png" id="3_adi61"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m558d"]
+atlas = ExtResource("3_adi61")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n85o3"]
+atlas = ExtResource("3_adi61")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tbib"]
+atlas = ExtResource("3_adi61")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5no15"]
+atlas = ExtResource("3_adi61")
+region = Rect2(336, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_modry"]
+atlas = ExtResource("3_adi61")
+region = Rect2(288, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdyui"]
+atlas = ExtResource("3_adi61")
+region = Rect2(384, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv88i"]
+atlas = ExtResource("3_adi61")
+region = Rect2(480, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8q1g"]
+atlas = ExtResource("3_adi61")
+region = Rect2(432, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnfd2"]
+atlas = ExtResource("3_adi61")
+region = Rect2(528, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x67b2"]
+atlas = ExtResource("3_adi61")
+region = Rect2(336, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5vwu"]
+atlas = ExtResource("3_adi61")
+region = Rect2(288, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ijnj"]
+atlas = ExtResource("3_adi61")
+region = Rect2(384, 288, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbdyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m558d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n85o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tbib")
+}],
+"loop": true,
+"name": &"run_brown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5no15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_modry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdyui")
+}],
+"loop": true,
+"name": &"run_gray",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv88i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8q1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnfd2")
+}],
+"loop": true,
+"name": &"run_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x67b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5vwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ijnj")
+}],
+"loop": true,
+"name": &"run_white",
+"speed": 5.0
+}]
+
+[node name="Rabbit" groups=["rabbits"] instance=ExtResource("1_m7oh1")]
+script = ExtResource("2_3n7b2")
+
+[node name="AnimatedSprite2D" parent="." index="7"]
+position = Vector2(1, -10)
+sprite_frames = SubResource("SpriteFrames_tbdyv")
+animation = &"run_white"
+frame_progress = 0.512602

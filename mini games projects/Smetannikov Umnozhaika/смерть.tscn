@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5wa3k2dynuhe"]
+
+[ext_resource type="Script" path="res://смерть.gd" id="1_1kuvx"]
+[ext_resource type="Texture2D" uid="uid://c2owox8bk1d6o" path="res://box/2.png" id="2_24jra"]
+[ext_resource type="Texture2D" uid="uid://dej0yj4ocqes2" path="res://box/лава.jpg" id="3_7hlkd"]
+
+[node name="Node2D" type="Node"]
+script = ExtResource("1_1kuvx")
+
+[node name="Button" type="Button" parent="."]
+z_index = 2
+z_as_relative = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -40.0
+offset_right = -40.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Restart"
+
+[node name="Button2" type="Button" parent="."]
+z_index = 4
+z_as_relative = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 89.0
+offset_right = -40.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Menu
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 190.0
+offset_right = 300.0
+offset_bottom = 220.0
+scale = Vector2(2, 2)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(507, 125)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_24jra")
+
+[node name="Лава" type="Sprite2D" parent="."]
+position = Vector2(602, -3)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7hlkd")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="ready" from="Label" to="." method="_on_label_ready"]

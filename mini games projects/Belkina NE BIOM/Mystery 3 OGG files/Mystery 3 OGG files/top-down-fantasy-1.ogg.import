@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl0ws1it8qdxb"
+path="res://.godot/imported/top-down-fantasy-1.ogg-14fd6fbc1e3278eab5b7617174307fca.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/top-down-fantasy-1.ogg"
+dest_files=["res://.godot/imported/top-down-fantasy-1.ogg-14fd6fbc1e3278eab5b7617174307fca.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

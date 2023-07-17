@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciaka3c0woqtm"]
+
+[ext_resource type="Script" path="res://Platform/node_2d.gd" id="1_3ohhj"]
+[ext_resource type="Texture2D" uid="uid://c5u7e6kretppi" path="res://props/small-platform.png" id="1_j13xg"]
+
+[sub_resource type="Curve2D" id="Curve2D_yfdcr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -11, 0, 0, 0, 0, 14, -206, 0, 0, 0, 0, 120, -250, 0, 0, 0, 0, 171, -198, 0, 0, 0, 0, 10, -37, 0, 0, 0, 0, -88, -262, 0, 0, 0, 0, 1, -14)
+}
+point_count = 7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaygt"]
+size = Vector2(16, 16)
+
+[node name="Platform_2" type="Path2D"]
+curve = SubResource("Curve2D_yfdcr")
+script = ExtResource("1_3ohhj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="PathFollow2D"]
+
+[node name="Small-platform" type="Sprite2D" parent="PathFollow2D/CharacterBody2D"]
+texture = ExtResource("1_j13xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_aaygt")

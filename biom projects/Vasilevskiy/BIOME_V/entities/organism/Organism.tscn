@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf61tuutio5er"]
+
+[ext_resource type="PackedScene" uid="uid://pg6a4b8qyhjo" path="res://entities/entity/Entity.tscn" id="1_rmwdn"]
+[ext_resource type="Script" path="res://entities/organism/Organism.gd" id="2_mpet5"]
+
+[node name="Organism" instance=ExtResource("1_rmwdn")]
+script = ExtResource("2_mpet5")
+children = 1
+eating_radius = 30

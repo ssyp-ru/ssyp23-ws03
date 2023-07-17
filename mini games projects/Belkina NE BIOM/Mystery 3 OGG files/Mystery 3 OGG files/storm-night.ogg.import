@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cobxnnfl2cqa8"
+path="res://.godot/imported/storm-night.ogg-818340a19e8d21b7db9634c251970aba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Mystery 3 OGG files/Mystery 3 OGG files/storm-night.ogg"
+dest_files=["res://.godot/imported/storm-night.ogg-818340a19e8d21b7db9634c251970aba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

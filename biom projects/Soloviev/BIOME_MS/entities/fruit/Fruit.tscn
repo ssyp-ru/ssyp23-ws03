@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqmvxr01tocm"]
+
+[ext_resource type="PackedScene" uid="uid://b7n2ws333887t" path="res://entities/food/Food.tscn" id="1_r8qmu"]
+[ext_resource type="Script" path="res://entities/fruit/Fruit.gd" id="2_mjp1l"]
+
+[node name="Fruit" groups=["fruits"] instance=ExtResource("1_r8qmu")]
+script = ExtResource("2_mjp1l")
+age = 0.0
+max_age = 18.0
+aging_speed = 1.1
+hunger = 0.0
+max_hunger = 100.0
+hunger_speed = 5
+sleep_chance = 0.01
+max_sleep_time = 10.0
+hunt2_chance = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="6"]

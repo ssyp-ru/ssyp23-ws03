@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ir06cwbg08jw"]
+
+[ext_resource type="Script" path="res://box/brok-box.gd" id="1_jgic1"]
+[ext_resource type="Texture2D" uid="uid://dejgpwyycrglx" path="res://box/вода.jpg" id="2_reevo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hnbdg"]
+load_path = "res://.godot/imported/big-crate.png-0cef2fe389b2b510389c846477d837bb.ctex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jgic1")
+
+[node name="Big-crate" type="Sprite2D" parent="."]
+scale = Vector2(6.5, 6.5)
+texture = SubResource("CompressedTexture2D_hnbdg")
+
+[node name="Вода" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-10.5, 2)
+scale = Vector2(0.289179, 0.25)
+texture = ExtResource("2_reevo")
